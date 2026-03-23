@@ -8,19 +8,19 @@ const skillCategories = [
     skills: ["Python", "C++", "C", "Java"],
   },
   {
-    label: "ML & Data",
+    label: "ML & AI",
     color: "glow-purple",
-    skills: ["Pandas", "NumPy", "Scikit-learn", "TensorFlow"],
+    skills: ["Pandas", "NumPy", "Scikit-learn", "TensorFlow", "Jupyter Notebook"],
   },
   {
-    label: "Web & Frameworks",
+    label: "Web Technologies",
     color: "glow-cyan",
-    skills: ["HTML", "CSS", "React.js", "Node.js"],
+    skills: ["HTML", "CSS"],
   },
   {
     label: "Tools & Platforms",
     color: "glow-green",
-    skills: ["MySQL", "VS Code", "Jupyter Notebook", "Git", "GitHub"],
+    skills: ["MySQL", "VS Code", "Git", "GitHub"],
   },
   {
     label: "Soft Skills",
@@ -55,23 +55,30 @@ const SkillsSection = () => {
           {skillCategories.map((cat, catIdx) => (
             <motion.div
               key={cat.label}
-              initial={{ opacity: 0, x: catIdx % 2 === 0 ? -30 : 30 }}
+              initial={{ opacity: 0, x: catIdx % 2 === 0 ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: catIdx * 0.1 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.6, delay: catIdx * 0.1, type: "spring", damping: 15 }}
             >
-              <h3 className={`font-heading text-sm font-semibold tracking-wider uppercase mb-4 ${labelColorMap[cat.color]}`}>
+              <motion.h3
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: catIdx * 0.1 + 0.2 }}
+                className={`font-heading text-sm font-semibold tracking-wider uppercase mb-4 ${labelColorMap[cat.color]}`}
+              >
                 {cat.label}
-              </h3>
+              </motion.h3>
               <div className="flex flex-wrap gap-3">
                 {cat.skills.map((skill, i) => (
                   <motion.span
                     key={skill}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
+                    whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: catIdx * 0.1 + i * 0.05 }}
-                    className={`skill-badge ${colorMap[cat.color]}`}
+                    transition={{ delay: catIdx * 0.1 + i * 0.08, type: "spring", stiffness: 200 }}
+                    whileHover={{ scale: 1.15, y: -4 }}
+                    className={`skill-badge cursor-default ${colorMap[cat.color]}`}
                   >
                     {skill}
                   </motion.span>
