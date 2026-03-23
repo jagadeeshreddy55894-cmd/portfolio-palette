@@ -10,7 +10,7 @@ const education = [
     period: "Aug 2023 – Present",
     badge: "Currently Enrolled",
     badgeColor: "bg-glow-green/20 text-glow-green border-glow-green/30",
-    description: "Current CGPA: 7.01. Focusing on Machine Learning, Data Science and Full Stack Development.",
+    description: "Current CGPA: 7.01. Focusing on Machine Learning and Artificial Intelligence.",
     year: "2023 – Present",
   },
   {
@@ -44,40 +44,67 @@ const EducationSection = () => {
 
         <div className="max-w-3xl mx-auto relative">
           {/* Timeline line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-glow-orange via-glow-purple to-glow-cyan" />
+          <motion.div
+            initial={{ height: 0 }}
+            whileInView={{ height: "100%" }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="absolute left-8 md:left-1/2 top-0 w-px bg-gradient-to-b from-glow-orange via-glow-purple to-glow-cyan"
+          />
 
           {education.map((edu, i) => (
             <motion.div
               key={edu.degree}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.2 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: i * 0.25, duration: 0.7, type: "spring" }}
               className={`relative flex flex-col md:flex-row gap-6 mb-12 ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
             >
               {/* Timeline dot */}
-              <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary shadow-[0_0_12px_hsl(var(--glow-orange)/0.6)] z-10" />
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.25 + 0.3, type: "spring", stiffness: 300 }}
+                className="absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary pulse-glow z-10"
+              />
 
               {/* Year label */}
-              <div className={`hidden md:flex items-center justify-center flex-1 ${i % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
-                <span className="text-glow-orange font-display text-lg">{edu.year}</span>
-              </div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.25 + 0.4 }}
+                className={`hidden md:flex items-center justify-center flex-1 ${i % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}
+              >
+                <span className="text-glow-orange font-display text-lg italic">{edu.year}</span>
+              </motion.div>
 
               {/* Card */}
-              <div className="flex-1 ml-16 md:ml-0 card-glow rounded-2xl p-6">
+              <motion.div
+                whileHover={{ scale: 1.02, y: -3 }}
+                className="flex-1 ml-16 md:ml-0 card-glow rounded-2xl p-6 transition-all"
+              >
                 <div className="flex justify-between items-start flex-wrap gap-2 mb-2">
                   <h3 className="font-heading text-lg font-bold text-foreground">{edu.degree}</h3>
-                  <span className={`text-xs px-3 py-1 rounded-full border font-heading ${edu.badgeColor}`}>
+                  <motion.span
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.25 + 0.5 }}
+                    className={`text-xs px-3 py-1 rounded-full border font-heading font-medium ${edu.badgeColor}`}
+                  >
                     <Award className="w-3 h-3 inline mr-1" />{edu.badge}
-                  </span>
+                  </motion.span>
                 </div>
-                <p className="text-glow-orange font-heading text-sm mb-2">{edu.institution}</p>
+                <p className="text-glow-orange font-heading text-sm font-medium mb-2">{edu.institution}</p>
                 <div className="flex flex-wrap gap-4 text-xs text-muted-foreground mb-3">
                   <span className="flex items-center gap-1"><MapPin className="w-3 h-3" />{edu.location}</span>
                   <span className="flex items-center gap-1"><Calendar className="w-3 h-3" />{edu.period}</span>
                 </div>
                 <p className="text-sm text-muted-foreground">{edu.description}</p>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>

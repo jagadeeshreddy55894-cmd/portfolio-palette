@@ -14,9 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Dancing Script"', 'cursive'],
-        heading: ['"Space Grotesk"', 'sans-serif'],
-        body: ['"Outfit"', 'sans-serif'],
+        display: ['"Playfair Display"', 'serif'],
+        heading: ['"Inter"', 'sans-serif'],
+        body: ['"Inter"', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",
