@@ -67,15 +67,19 @@
 
 @layer utilities {
   .font-display {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Playfair Display', serif;
   }
 
   .font-heading {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
 
   .font-body {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
   }
 
   .gradient-text {
