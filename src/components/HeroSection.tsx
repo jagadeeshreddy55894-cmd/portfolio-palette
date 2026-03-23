@@ -10,7 +10,7 @@ const container = {
 };
 const item = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { type: "spring", damping: 15 } },
+  show: { opacity: 1, y: 0, transition: { type: "spring" as const, damping: 15 } },
 };
 
 const HeroSection = () => {
