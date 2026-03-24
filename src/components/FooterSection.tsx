@@ -74,7 +74,7 @@ const FooterSection = () => {
             transition={{ delay: 0.7 }}
             className="text-sm text-muted-foreground flex items-center justify-center gap-1"
           >
-            Made with <motion.span animate={{ scale: [1, 1.3, 1] }} transition={{ duration: 1, repeat: Infinity }}><Heart className="w-4 h-4 text-glow-pink" /></motion.span> by Jagadeesh Reddy
+            Made by Jagadeesh Reddy
           </motion.p>
         </motion.div>
       </div>
