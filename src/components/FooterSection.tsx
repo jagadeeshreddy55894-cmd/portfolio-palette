@@ -40,7 +40,7 @@ const FooterSection = () => {
               <Mail className="w-5 h-5" /> ganareddy874@gmail.com
             </motion.a>
             <motion.a whileHover={{ scale: 1.05, y: -2 }} href="tel:+918304759337" className="flex items-center gap-2 text-muted-foreground hover:text-glow-cyan transition-colors">
-              <Phone className="w-5 h-5" /> +91-8304759337
+              <Phone className="w-5 h-5" /> +91-6304759337
             </motion.a>
           </motion.div>
 
