@@ -9,7 +9,7 @@ const projects = [
     period: "Aug 2025 – Nov 2025",
     description: "Developed a pension fraud detection system using Python and Pandas to identify suspicious multi-scheme enrollments and improve data reliability. Implemented automated logic to group beneficiaries and detect duplicate or anomalous pension claims across multiple schemes.",
     tech: ["Python", "Pandas", "NumPy", "Machine Learning"],
-    link: "#",
+    link: "https://github.com/jagadeeshreddy55894-cmd/pension-fraud-dectection/tree/main",
     color: "card-glow",
   },
   {
@@ -18,7 +18,7 @@ const projects = [
     period: "Jan 2025 – May 2025",
     description: "Developed a Python-based utility simulating a custom file system with features such as file creation, deletion, reading, and backup/restore operations. Applied core OS concepts including block allocation and data recovery.",
     tech: ["Python", "Git", "File System Simulation"],
-    link: "#",
+    link: "https://rishix22.github.io/File-System-Recovery-and-Optimization-Tool/",
     color: "card-glow-purple",
   },
 ];
