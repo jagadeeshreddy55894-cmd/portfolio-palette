@@ -58,7 +58,7 @@ const TrainingSection = () => {
                 </motion.span>
               ))}
             </div>
-            <motion.a whileHover={{ x: 5 }} href="#" className="inline-flex items-center gap-1 text-sm text-glow-cyan hover:underline font-heading font-medium">
+            <motion.a whileHover={{ x: 5 }} href="https://drive.google.com/file/d/1h4gTAS7GJ8DLfHSy5PALMLeaW2uAhW7C/view" className="inline-flex items-center gap-1 text-sm text-glow-cyan hover:underline font-heading font-medium">
               Certificate <ExternalLink className="w-3 h-3" />
             </motion.a>
           </motion.div>
