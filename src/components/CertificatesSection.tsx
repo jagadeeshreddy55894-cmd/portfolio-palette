@@ -62,9 +62,19 @@ const CertificatesSection = () => {
               <h3 className="font-heading text-lg font-bold text-foreground mb-1">{cert.title}</h3>
               <p className="text-glow-orange text-sm font-heading font-medium mb-2">{cert.provider}</p>
               <p className="text-xs text-muted-foreground font-mono mb-3">{cert.period}</p>
-              <motion.a whileHover={{ x: 5 }} href="https://drive.google.com/file/d/1h6qGJiPVtp7NLq71jbH-pGovypbZUQaL/view" className="inline-flex items-center gap-1 text-sm text-glow-cyan hover:underline font-heading font-medium">
-                View Certificate <ExternalLink className="w-3 h-3" />
-              </motion.a>
+              <motion.a 
+  whileHover={{ x: 5 }} 
+  href={
+    cert.title === "Introduction to Large Language Models"
+      ? "https://drive.google.com/file/d/1bPZRA0jplVaTXfp2Hz4sRY6shxEOGnwO/view"
+      : "https://drive.google.com/file/d/1h6qGJiPVtp7NLq71jbH-pGovypbZUQaL/view"
+  }
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-1 text-sm text-glow-cyan hover:underline font-heading font-medium"
+>
+  View Certificate <ExternalLink className="w-3 h-3" />
+</motion.a>
             </motion.div>
           ))}
         </div>
