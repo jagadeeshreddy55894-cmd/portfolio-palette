@@ -131,14 +131,15 @@ const HeroSection = () => {
             >
               <Download className="w-4 h-4" /> Download Resume
             </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-              href="mailto:ganareddy874@gmail.com"
-              className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-primary/50 text-primary font-heading font-semibold text-sm hover:bg-primary/10 hover:border-primary transition-all"
-            >
-              <Mail className="w-4 h-4" /> Contact Me
-            </motion.a>
+           <motion.a
+  whileHover={{ scale: 1.04 }}
+  whileTap={{ scale: 0.97 }}
+  href="/resume.pdf"
+  download="Jagadeesh_Reddy_CV.pdf"
+  className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-heading font-semibold text-sm hover:shadow-[0_0_25px_hsl(var(--glow-orange)/0.35)] transition-shadow"
+>
+  <Download className="w-4 h-4" /> Download Resume
+</motion.a>
             {[
               { href: "https://github.com/Jagadeeshreddy2006", icon: Github, hc: "hover:border-glow-cyan hover:text-glow-cyan hover:shadow-[0_0_15px_hsl(var(--glow-cyan)/0.2)]" },
               { href: "https://linkedin.com/in/jagadeeshreddy2006/", icon: Linkedin, hc: "hover:border-glow-blue hover:text-glow-blue hover:shadow-[0_0_15px_hsl(var(--glow-blue)/0.2)]" },
