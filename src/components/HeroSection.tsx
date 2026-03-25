@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Github, Linkedin, Mail, Download, ChevronDown } from "lucide-react";
-const profileImg = "/profile.png";
+const profileImg = "/profile.jpg";
 import { useRef } from "react";
 
 const container = {
